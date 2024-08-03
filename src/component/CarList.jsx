@@ -45,7 +45,7 @@ const CarList = ({ token, isAdmin }) => {
             ))}
           </ul>
         ) : (
-          <p>No cars available</p>
+          <p>Loding...</p>
         )}
       </div>
     </div>
