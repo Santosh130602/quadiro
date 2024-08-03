@@ -7,13 +7,13 @@ import axios from 'axios';
 
 const Mycar = ({ token, isAdmin }) => {
   const [cars, setCars] = useState([]);
-  const [editCar, setEditCar] = useState(null); // For edit modal
+  const [editCar, setEditCar] = useState(null); 
   const [formData, setFormData] = useState({ carname: '', year: '', price: '', image: '' });
 
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/car/getAllCars', {
+        const response = await axios.get('https://quadiro-bcrj.onrender.com/api/car/getAllCars', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -34,7 +34,7 @@ const Mycar = ({ token, isAdmin }) => {
   const updateCar = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:4000/api/car/updateCar/${editCar._id}`, formData, {
+      const response = await axios.put(`https://quadiro-bcrj.onrender.com/api/car/updateCar/${editCar._id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -48,7 +48,7 @@ const Mycar = ({ token, isAdmin }) => {
 
   const deleteHandler = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/car/deleteCar/${id}`, {
+      await axios.delete(`https://quadiro-bcrj.onrender.com/api/car/deleteCar/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
