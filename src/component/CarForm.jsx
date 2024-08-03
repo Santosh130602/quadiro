@@ -37,8 +37,8 @@ const CarForm = ({ setCars, token }) => {
     setLoading(true);
     const data = new FormData();
     data.append("file", file);
-    data.append("upload_preset", "liaison"); // Replace with your Cloudinary upload preset
-    data.append("cloud_name", "dh5s1wktp"); // Replace with your Cloudinary cloud name
+    data.append("upload_preset", "liaison"); 
+    data.append("cloud_name", "dh5s1wktp"); 
 
     fetch("https://api.cloudinary.com/v1_1/dh5s1wktp/image/upload", {
       method: "post",
@@ -61,7 +61,7 @@ const CarForm = ({ setCars, token }) => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/car/createCar', {
+      const response = await axios.post('https://quadiro-bcrj.onrender.com/api/car/createCar', {
         ...formData,
         image: imageURL,
       }, {
