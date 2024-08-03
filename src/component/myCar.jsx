@@ -13,7 +13,7 @@ const Mycar = ({ token, isAdmin }) => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await axios.get('https://quadiro-bcrj.onrender.com/api/car/getAllCars', {
+        const response = await axios.get('https://quadiro-bcrj.onrender.com/api/car/getUserCars', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
