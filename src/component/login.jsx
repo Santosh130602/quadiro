@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { jwtDecode } from "jwt-decode"; // Fixed import statement
+import { jwtDecode } from "jwt-decode"; 
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/user/login', {
+      const response = await axios.post('https://quadiro-bcrj.onrender.com/api/user/login', {
         username,
         password,
       });
