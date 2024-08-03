@@ -27,10 +27,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login onLogin={handleLogin} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup onSignup={handleSignup} />} />
-        // <Route path="/" element={<Navigate to={role === 'admin' ? '/admin' : '/user'} />} />
-    <Route path="/" element={<Login onLogin={handleLogin} />} />
+        
         <Route
           path="/admin-dashboard"
           element={<PrivateRoute token={token} role="admin"><AdminDashboard /></PrivateRoute>}
